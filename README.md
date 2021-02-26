@@ -9,7 +9,7 @@ HCP document about the issue:
 https://discuss.hashicorp.com/t/notice-aws-vpc-endpoint-service-error-multiple-vpc-endpoint-services-matched/20472)
 
 It uses the HCP TF external data source to take in JSON input from TF: <region> <service> <servicetype>
-It outputs the endpoint name if it is found - which it should be as long as there isn't an error in the input
+It outputs the ServiceName if it is found - which it should be as long as there isn't an error in the input
 
 # Pre-reqs
 - Linux host OS (that can run bash scripts)
