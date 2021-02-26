@@ -9,5 +9,5 @@ data "external" "endpoint_services" {
 }
 
 output "result" {
-  value = "${data.external.endpoint_services.result.endpoint}"
+  value = "${data.external.endpoint_services.result.servicename}"
 }
