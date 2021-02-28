@@ -1,15 +1,18 @@
 # aws_vpc_endpoint_service
+## When its needed
+This is only useful, if you cannot upgrade to TerraForm version 12 or above (a version that can use the AWS provider v3.10.0 or above), and therefore still require the use of TerraForm 11 and your code also requires the use of the TF data source "aws_vpc_endpoint_service"
+
+HCP article:
+https://github.com/MysticalMount/aws_vpc_endpoint_service
+## What it does
 Rewrites aws_vpc_endpoint_service data source in bash for use with TerraForm external data source
 
 MysticalMount - Script to retrieve AWS VPC endpoint - until we can upgrade Terraform this will replace the data source "aws_vpc_endpoint_service"
 Issues with this data source arose since AWS introduced new types of endpoints for S3 which can result in multiple results being returned, which
-the AWS provider v2.7 (included with TF 11 automatically) - cannot handle without error.
+the AWS provider v2.7.0 (included with TF 11 automatically) - cannot handle without error.
  
-HCP document about the issue:
-https://discuss.hashicorp.com/t/notice-aws-vpc-endpoint-service-error-multiple-vpc-endpoint-services-matched/20472)
-
 It uses the HCP TF external data source to take in JSON input from TF: <region> <service> <servicetype>
-It outputs the ServiceName if it is found - which it should be as long as there isn't an error in the input
+It outputs the ServiceName, if it is found - which it should be as long as there isn't an error in the input
 
 # Pre-reqs
 - Linux host OS (that can run bash scripts)
